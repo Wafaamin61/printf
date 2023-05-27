@@ -23,7 +23,7 @@
 struct fmt
 {
 	char fmt;
-	int(*fn)(va_list, char[], int, int, int, int);
+	int (*fn)(va_list, char[], int, int, int, int);
 }
 /**
  * typedef struct fmt fmt_t-struct op
@@ -32,7 +32,7 @@ struct fmt
  * @fm_t: The funtion associated
  */
 typedef struct fmt fmt_t;
-int _printf(const char *fmt, int*i, va_list list, char buffer[], int flags, int width, int precision, int size);
+int _printf(const char *fmt, int *i, va_list list, char buffer[], int flags, int width, int precision, int size);
 /******************FUNTIONS******************/
 	/*functions to print chars an strings*/
 int print_char(va_list types, char bufer[], int flags, int width, int preision, int size);
@@ -43,18 +43,18 @@ int print_int(va_list types, char buffer[], int flags, int width, int precision,
 int print_binary(va_list types, char buffer[], int flags, int width, int precision, int size);
 int print_unsigned(va_list types, char buffer[], int flags, int width, int precision, int size);
 int print_octal(va_list types, char buffer[], int flags, int width, int precision, int size);
-int print_hexadecimal(va_list types, char buffer[],int flags,int width,int precisioon,int size);
-int print_hexa_upper(va_list types,char buffer[], int flags, int width, int precision, int size);
+int print_hexadecimal(va_list types, char buffer[], int flags, int width, int precisioon, int size);
+int print_hexa_upper(va_list types, char buffer[], int flags, int width, int precision, int size);
 int print_hexa(va_list types, char map_to[], char buffer[], int flags, char flags_ch, int width, int precision, int size);
 	/*function to print non printable characters */
 int print_non_printable(va_list types, char buffer[], int flags, int width, int precision, int size);
 	/*functions to print memory address*/
 int print_pointer(va_list types, char buffer[], int flags, int width, int precision, int size);
 	/*functions to handle other specifiers*/
-int get_flags(const char *format, int*i);
-int get_width(const char *format, int*i, va_list list);
-int get_precision(const char *farmat, int*i, va_list list);
-int get_size(const char *format, int*i);
+int get_flags(const char *format, int *i);
+int get_width(const char *format, int *i, va_list list);
+int get_precision(const char *farmat, int *i, va_list list);
+int get_size(const char *format, int *i);
 	/*functions to print string in reverse*/
 int print_reverse(va_list types, char buffer[], int flags, int width, int precision, int size);
 	/*functions to print a string in rot 13 */
