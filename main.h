@@ -35,7 +35,7 @@ typedef struct fmt fmt_t;
 int _printf(const char *fmt, int *i, va_list list, char buffer[], int flags, int width, int precision, int size);
 /******************FUNTIONS******************/
 	/*functions to print chars an strings*/
-int print_char(va_list types, char bufer[], int flags, int width, int preision, int size);
+int print_char(va_list types, char bufer[], int flags, int width, int precision, int size);
 int print_string(va_list types, char buffer[], int flags, int width, int precision, int size);
 int orint_percent(va_list types, char buffer[], int flags, int width, int precision, int size);
 	/*functions to print numbers*/
