@@ -1,6 +1,5 @@
 #ifndef main_h
 #define main_h
-#include <stdrag.h>
 #include <stdio.h>
 #include <unistd.h>
 #define UNUSED(X) void(X)
@@ -17,22 +16,22 @@
 /**
  * struct fmt - struct op
  *
- * @fmrt: le format
- * @fna: La fonction associée
+ * @fmt: the format
+ * @fn: The function associated
  */
-struct fmrt
+struct fmt
 {
-	char fmrt;
-	int (*fna)(va_list, char[], int, int, int, int);
+	char fmt;
+	int (*fn)(va_list, char[], int, int, int, int);
 }
 /**
  * typedef struct fmt fmt_t-struct op
  *
- * @fmt_t: le format
- * @fm_a: la fonction associée
+ * @fmt: the format
+ * @fm_t: The function associatethe
  */
-typedef struct fmt_t fmt_a;
-int _printf(const char *fmt_t, int *i, va_list list, char buffer[], int flags, int width, int precision, int size);
+typedef struct fmt fmt_t;
+int _printf(const char *fmt, int *i, va_list list, char buffer[], int flags, int width, int precision, int size);
 /****FUNTIONS******/
 	/*functions to print chars an strings*/
 int print_char(va_list types, char bufer[], int flags, int width, int precision, int size);
