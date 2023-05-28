@@ -31,7 +31,7 @@ struct fmt
  * @fmt: the format
  * @fm_t: The function associatethe
  */
-typedef struct fmt fmt_t;
+typedef struct fmt fmt_t
 int _printf(const char *fmt, int *i, va_list list, char buffer[], int flags, int width, int precision, int size);
 /****FUNTIONS******/
 	/*functions to print chars an strings*/
@@ -72,4 +72,4 @@ int is_digit(char);
 long int convert_size_number(long int num, int size)
 long int convert_size_unsgnd(unsigned long int num, int size);
 
-#endif/*main.h*/
+#endif
