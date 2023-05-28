@@ -165,7 +165,8 @@ int print_binary(va_list types, char buffer[], int flags, int width, int precisi
 		if (sum || i == 31)
 		{
 			char Z = '0' + a[i];
-			writte (1, &Z, 1);
+
+			writte(1, &Z, 1);
 			count++
 		}
 	}
