@@ -11,7 +11,7 @@
 
  * @buffer: Buffer array to handle print
 
- * @flags:  Calculates active flags
+ * @flags: Calculates active flags
 
  * @width: get width
 
@@ -29,7 +29,7 @@ int print_unsigned(va_list types, char buffer[],
 
 {
 
-	int n = BUFF_SIZE - 2;
+	int i = BUFF_SIZE - 2;
 
 	unsigned long int num = va_arg(types, unsigned long int);
 
@@ -39,7 +39,7 @@ int print_unsigned(va_list types, char buffer[],
 
 	if (num == 0)
 
-		buffer[n--] = '0';
+		buffer[i--] = '0';
 
 
 	buffer[BUFF_SIZE - 1] = '\0';
@@ -49,14 +49,14 @@ int print_unsigned(va_list types, char buffer[],
 
 	{
 
-		buffer[n--] = (num % 10) + '0';
+		buffer[i--] = (num % 10) + '0';
 
 		num /= 10;
 
 	}
 
 
-	n++;
+	i++;
 
 
 	return (write_unsgnd(0, n, buffer, flags, width, precision, size));
@@ -93,7 +93,7 @@ int print_octal(va_list types, char buffer[],
 {
 
 
-	int n = BUFF_SIZE - 2;
+	int i = BUFF_SIZE - 2;
 
 	unsigned long int num = va_arg(types, unsigned long int);
 
@@ -108,7 +108,7 @@ int print_octal(va_list types, char buffer[],
 
 	if (num == 0)
 
-		buffer[n--] = '0';
+		buffer[i--] = '0';
 
 
 	buffer[BUFF_SIZE - 1] = '\0';
@@ -118,7 +118,7 @@ int print_octal(va_list types, char buffer[],
 
 	{
 
-		buffer[n--] = (num % 8) + '0';
+		buffer[i--] = (num % 8) + '0';
 
 		num /= 8;
 
@@ -127,10 +127,10 @@ int print_octal(va_list types, char buffer[],
 
 	if (flags & F_HASH && init_num != 0)
 
-		buffer[n--] = '0';
+		buffer[i--] = '0';
 
 
-	n++;
+	i++;
 
 
 	return (write_unsgnd(0, n, buffer, flags, width, precision, size));
@@ -242,7 +242,7 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 
 {
 
-	int n = BUFF_SIZE - 2;
+	int i = BUFF_SIZE - 2;
 
 	unsigned long int num = va_arg(types, unsigned long int);
 
@@ -257,7 +257,7 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 
 	if (num == 0)
 
-		buffer[n--] = '0';
+		buffer[i--] = '0';
 
 
 	buffer[BUFF_SIZE - 1] = '\0';
@@ -267,7 +267,7 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 
 	{
 
-		buffer[n--] = map_to[num % 16];
+		buffer[i--] = map_to[num % 16];
 
 		num /= 16;
 
@@ -278,14 +278,14 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 
 	{
 
-		buffer[n--] = flag_ch;
+		buffer[i--] = flag_ch;
 
-		buffer[n--] = '0';
+		buffer[i--] = '0';
 
 	}
 
 
-	n++;
+	i++;
 
 
 	return (write_unsgnd(0, n, buffer, flags, width, precision, size));
