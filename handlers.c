@@ -20,7 +20,7 @@ int handle_write_char(char c, char buffer[],
 	char padd = ' ';
 
 	UNUSED(precision);
-	UNSED(size);
+	UNUSED(size);
 
 	if (flags & F_ZERO)
 		padd = '0';
@@ -31,7 +31,7 @@ int handle_write_char(char c, char buffer[],
 	if (width > 1)
 	{
 		buffer[BUFF_SIZE - 1] = '\0';
-		for (i = 0; < width - 1; i++)
+		for (i = 0; i < width - 1; i++)
 			buffer[BUFF_SIZE - i - 2] = padd;
 
 		if (flags & F_MINUS)
